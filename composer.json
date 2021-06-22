@@ -1,0 +1,31 @@
+{
+    "authors": [
+        {
+            "email": "a.matthies@sms77.io",
+            "homepage": "https://www.sms77.io",
+            "name": "sms77 e.K.",
+            "role": "Developer"
+        }
+    ],
+    "description": "Gambio 4.x module for sending SMS via Sms77.io",
+    "homepage": "https://github.com/sms77io/gambio",
+    "keywords": [
+        "2fa",
+        "sms",
+        "gateway",
+        "gambio",
+        "module"
+    ],
+    "license": "MIT",
+    "name": "sms77/gambio",
+    "require": {
+        "php": ">=5.6",
+        "sms77/api": "dev-php5.6"
+    },
+    "support": {
+        "email": "support@sms77.io",
+        "rss": "https://www.sms77.io/de/feed/",
+        "source": "https://github.com/sms77io/gambio",
+        "docs": "https://github.com/sms77io/gambio"
+    }
+}

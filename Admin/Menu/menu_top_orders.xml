@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!-- {load_language_text section="admin_menu"} -->
+<admin_menu>
+    <menugroup id="BOX_HEADING_CUSTOMERS">
+        <menuitem link="admin.php" link_param="do=Sms77"  title="Sms77 SMS"/>
+    </menugroup>
+</admin_menu>
