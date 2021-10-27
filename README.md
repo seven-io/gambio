@@ -24,7 +24,7 @@ Module for bulk messaging in Gambio 4.x installations.
 
 ## Functionalities
 
-- Bulk SMS
+- Bulk SMS & Bulk text-to-speech calling
   - Filter by customer group
 
 ### Placeholders (for customer objects)

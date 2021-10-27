@@ -3,8 +3,8 @@
 $t_language_text_section_content_array = [
     'API_KEY_MISSING' => 'Ein API-Schlüssel ist notwendig für den Versand. Bitte navigieren Sie zu den Moduleinstellungen um diesen zu setzen: ',
 
-    'BULK_SMS' => 'Massen-SMS',
-    'BULK_SMS_TITLE' => 'Massen-SMS via Sms77',
+    'BULK_MSG' => 'Massenversand',
+    'BULK_MSG_TITLE' => 'Massenversand via sms77',
 
     'CLICK_HERE' => 'Hier klicken',
 
@@ -25,8 +25,9 @@ $t_language_text_section_content_array = [
     'FOREIGN_ID' => 'Foreign ID',
     'FOREIGN_ID_DETAIL' => 'Max. 64 Zeichen bestehend aus:',
 
+    'SMS' => 'SMS',
     'SMS_FROM' => 'Absender',
-    'SMS_FROM_DETAIL' => 'Maximal 11 alphanumerische oder 16 numerische Zeichen.',
+    'SMS_FROM_DETAIL' => 'Maximal 11 alphanumerische (nur SMS) oder 16 numerische Zeichen. Bei Sprachnachrichten muss die Nummer geteilt oder verifiziert sein.',
 
     'LABEL' => 'Label',
     'LABEL_DETAIL' => 'Maximal 100 Zeichen bestehend aus:',
@@ -42,5 +43,10 @@ $t_language_text_section_content_array = [
     'SEND' => 'Senden',
 
     'TEXT' => 'Nachrichteninhalt',
-    'TEXT_DETAIL_SMS' => 'Maximal 1520 Zeichen',
+    'TEXT_DETAIL_LIMIT' => 'Maximale Anzahl an Zeichen: ',
+
+    'VOICE' => 'Text-zu-Sprache',
+
+    'XML' => 'XML',
+    'XML_DETAIL' => 'Aktivieren wenn der Text im XML-Format ist'
 ];

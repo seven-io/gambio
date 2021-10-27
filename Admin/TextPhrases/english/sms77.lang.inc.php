@@ -3,8 +3,8 @@
 $t_language_text_section_content_array = [
     'API_KEY_MISSING' => 'An API key is required for sending. Please navigate to the module settings to set one: ',
 
-    'BULK_SMS' => 'Bulk SMS',
-    'BULK_SMS_TITLE' => 'Bulk SMS by Sms77',
+    'BULK_MSG' => 'Bulk Messaging',
+    'BULK_MSG_TITLE' => 'Bulk messaging by sms77',
 
     'CLICK_HERE' => 'Click here',
 
@@ -25,8 +25,9 @@ $t_language_text_section_content_array = [
     'FOREIGN_ID' => 'Foreign ID',
     'FOREIGN_ID_DETAIL' => 'Max. 64 chars, allowed characters:',
 
+    'SMS' => 'SMS',
     'SMS_FROM' => 'From',
-    'SMS_FROM_DETAIL' => 'A maximum of 11 alhanumeric or 16 numeric characters.',
+    'SMS_FROM_DETAIL' => 'A maximum of 11 alphanumeric (only SMS) or 16 numeric characters. Must be shared or validated for voice calls.',
 
     'LABEL' => 'Label',
     'LABEL_DETAIL' => 'Max. 100 chars, allowed characters:',
@@ -42,5 +43,10 @@ $t_language_text_section_content_array = [
     'SEND' => 'Send',
 
     'TEXT' => 'Text',
-    'TEXT_DETAIL_SMS' => 'A maximum of 1520 characters',
+    'TEXT_DETAIL_LIMIT' => 'Maximum characters: ',
+
+    'VOICE' => 'Text-To-Speech',
+
+    'XML' => 'XML',
+    'XML_DETAIL' => 'Enable if text is of XML format'
 ];

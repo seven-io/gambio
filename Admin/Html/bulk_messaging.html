@@ -1,0 +1,224 @@
+{extends file='get_usermod:layouts/main/layout.html'}
+
+{block name='content'}
+{load_language_text section='sms77'}
+
+<h1>{$txt.BULK_MSG}</h1>
+
+<hr>
+
+{foreach item=error from=$content.errors}
+<div class='alert alert-danger alert-dismissible' role='alert'>
+    <button type='button' class='close' data-dismiss='alert'
+            aria-label='{$txt.DISCARD_MESSAGE}'>
+        <span aria-hidden='true'>&times;</span></button>
+    {$error}
+</div>
+{/foreach}
+
+{foreach item=info from=$content.infos}
+<div class='alert alert-info alert-dismissible' role='alert'>
+    <button type='button' class='close' data-dismiss='alert'
+            aria-label='{$txt.DISCARD_MESSAGE}'>
+        <span aria-hidden='true'>&times;</span></button>
+    {$info}
+</div>
+{/foreach}
+
+{if '' === ($txt || '')}
+<p>{$txt.API_KEY_MISSING}<a href='{$content.settingsLink}'>{$txt.CLICK_HERE}</a></p>
+{else}
+<form action='{$content.action}' class='form-horizontal' data-gx-widget='tooltip'
+      method='post' id='sms77_compose_bulk_msg'>
+    <div class='form-group'>
+        <label class='col-md-6'>
+            <input type='radio' name='msg_type' value='sms' checked/>{$txt.SMS}
+        </label>
+
+        <label class='col-md-6'>
+            <input type='radio' name='msg_type' value='voice'/>{$txt.VOICE}
+        </label>
+    </div>
+
+    <fieldset>
+        <legend>{$txt.FILTERS}</legend>
+        <p>{$txt.FILTERS_DETAIL}</p>
+
+        <div class='form-group'>
+            <label for='filter_customer_group' class='col-md-6'>
+                {$txt.CUSTOMER_GROUP}
+            </label>
+            <select id='filter_customer_group' name='filter_customer_group'
+                    class='col-md-6 form-control' style='margin-left: 15px; width: auto'>
+                <option value=''>{$txt.CUSTOMER_GROUP_ALL}</option>
+
+                {foreach from=$content.customerGroups item=name key=id}
+                <option value='{$id}'>
+                    {$name}
+                </option>
+                {/foreach}
+            </select>
+        </div>
+    </fieldset>
+
+    <hr>
+
+    <div class='form-group'>
+        <label for='from' class='col-md-6'>
+            {$txt.SMS_FROM} <small>{$txt.SMS_FROM_DETAIL}</small>
+        </label>
+        <div class='col-md-6'>
+            <input class='form-control'
+                   id='from'
+                   maxlength='16'
+                   name='from'
+                   type='text'
+                   value='{gm_get_conf("SMS77_SMS_FROM")}'
+            />
+        </div>
+    </div>
+
+    <div class='form-group' id='label_wrap'>
+        <label for='label' class='col-md-6'>
+            {$txt.LABEL} <small>{$txt.LABEL_DETAIL}
+            <code>a-z, A-Z, 0-9,.-_@.</code></small>
+        </label>
+        <div class='col-md-6'>
+            <input
+                    class='form-control'
+                    id='label'
+                    maxlength='100'
+                    name='label'
+                    type='text'
+            />
+        </div>
+    </div>
+
+    <div class='form-group' id='foreign_id_wrap'>
+        <label for='foreign_id' class='col-md-6'>
+            {$txt.FOREIGN_ID} <small>{$txt.FOREIGN_ID_DETAIL}
+            <code>a-z, A-Z, 0-9,.-_@.</code></small>
+        </label>
+        <div class='col-md-6'>
+            <input
+                    class='form-control'
+                    id='foreign_id'
+                    maxlength='64'
+                    name='foreign_id'
+                    type='text'
+            />
+        </div>
+    </div>
+
+    <div class='form-group'>
+        <div class='gx-container col-md-3' data-gx-widget='checkbox'
+             title='{$txt.FLASH_DETAIL}' id='flash_wrap'>
+            <label>
+                {$txt.FLASH}<br>
+
+                <input name='flash'
+                       type='checkbox'
+                       value='1'
+                />
+            </label>
+        </div>
+
+        <div class='gx-container col-md-3' data-gx-widget='checkbox'
+             title='{$txt.PERFORMANCE_TRACKING_DETAIL}' id='performance_tracking_wrap'>
+            <label>
+                {$txt.PERFORMANCE_TRACKING}<br>
+
+                <input name='performance_tracking'
+                       type='checkbox'
+                       value='1'
+                />
+            </label>
+        </div>
+
+        <div class='gx-container col-md-3' data-gx-widget='checkbox'
+             title='{$txt.DEBUG_DETAIL}'>
+            <label>
+                {$txt.DEBUG}<br>
+
+                <input name='debug'
+                       type='checkbox'
+                       value='1'
+                />
+            </label>
+        </div>
+
+        <div class='gx-container col-md-3' data-gx-widget='checkbox'
+             title='{$txt.XML_DETAIL}' id='xml_wrap' style='display: none'>
+            <label>
+                {$txt.XML}<br>
+
+                <input name='xml' type='checkbox' value='1'/>
+            </label>
+        </div>
+
+        <div class='gx-container col-md-3' data-gx-widget='checkbox'
+             title='{$txt.NO_RELOAD_DETAIL}' id='no_reload_wrap'>
+            <label>
+                {$txt.NO_RELOAD}<br>
+
+                <input name='no_reload'
+                       type='checkbox'
+                       value='1'
+                />
+            </label>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class='control-group'>
+        <label for='text'>
+            {$txt.TEXT}
+
+            <small>{$txt.TEXT_DETAIL_LIMIT}<span id='text_char_limit'>1520</span></small>
+        </label>
+        <textarea id='text' maxlength='1520' name='text' required rows='7'
+                  style='width: 100%'>{literal}Hi {{firstname}} {{lastname}} (#{{id}}).
+Are you a {{gender}} born {{dateOfBirth}}?
+Is your telephone number {{telephoneNumber}} correct?
+What about your fax number {{faxNumber}} and email {{email}}?
+Your customer number is {{customerNumber}} with status {{customerStatusId}}.
+Your VAT number is {{vatNumber}} with status {{vatNumberStatus}}.
+Are you a guest: {{isGuest}}{/literal}</textarea>
+    </div>
+
+    <div class='btn-container pull-right'>
+        <input type='submit' class='btn btn-primary' value='{$txt.SEND}'/>
+    </div>
+</form>
+<script>
+    const smsInputs = [
+        document.getElementById('flash_wrap'),
+        document.getElementById('performance_tracking_wrap'),
+        document.getElementById('no_reload_wrap'),
+        document.getElementById('label_wrap'),
+        document.getElementById('foreign_id_wrap'),
+    ]
+
+    const voiceInputs = [
+        document.getElementById('xml_wrap'),
+    ]
+
+    const textCharLimit = document.getElementById('text_char_limit')
+    const text = document.getElementById('text')
+    const form = document.getElementById('sms77_compose_bulk_msg')
+    const types = document.querySelectorAll('input[name="msg_type"]')
+
+    Array.from(types).forEach(t => t.addEventListener('change', e => {
+        const isVoice = 'voice' === e.target.value
+        const maxLength = isVoice ? '10000' : '1520'
+
+        smsInputs.forEach(i => i.style.display = isVoice ? 'none' : 'block')
+        voiceInputs.forEach(i => i.style.display = isVoice ? 'block' : 'none')
+
+        text.setAttribute('maxlength', maxLength)
+        textCharLimit.textContent = maxLength
+    }))
+</script>
+{/if}
+{/block}
