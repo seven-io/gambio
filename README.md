@@ -1,4 +1,4 @@
-![Sms77.io Logo](https://www.sms77.io/wp-content/uploads/2019/07/sms77-Logo-400x79.png "Sms77.io Logo")
+![](https://www.seven.io/wp-content/uploads/Logo.svg "seven Logo")
 
 Module for bulk messaging in Gambio 4.x installations.
 
@@ -7,18 +7,18 @@ Module for bulk messaging in Gambio 4.x installations.
 *From release - the easy way*
 
 1. Download
-   the [latest release](https://github.com/sms77io/gambio/releases/latest/download/sms77-gambio_latest.zip)
+   the [latest release](https://github.com/seven-io/gambio/releases/latest/download/seven-gambio_latest.zip)
 2. Extract archive to `/<path>/<to>/<gambio>/GXModules`
 
 *From source*
 
-1. `cd /<path>/<to>/<gambio>/GXModules && mkdir Sms77 && cd Sms77`
-2. `git clone https://github.com/sms77io/gambio Sms77 && cd Sms77`
+1. `cd /<path>/<to>/<gambio>/GXModules && mkdir Seven && cd Seven`
+2. `git clone https://github.com/seven-io/gambio Seven && cd Seven`
 3. `composer update`
 
 *Common steps*
 
-1. Gambio Admin: Go to `Module Center` and install `Sms77`
+1. Gambio Admin: Go to `Module Center` and install `Seven`
 2. Click `Edit`, insert `API key` and press `Save`
 3. Start sending via `Customers->Send SMS`
 
@@ -51,6 +51,6 @@ otherwise.
 
 ##### Support
 
-Need help? Feel free to [contact us](https://www.sms77.io/en/company/contact/).
+Need help? Feel free to [contact us](https://www.seven.io/en/company/contact/).
 
-[![MIT](https://img.shields.io/badge/License-MIT-teal.svg)](./LICENSE)
+[![MIT](https://img.shields.io/badge/License-MIT-teal.svg)](LICENSE)

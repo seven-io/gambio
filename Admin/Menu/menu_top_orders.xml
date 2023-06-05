@@ -2,6 +2,6 @@
 <!-- {load_language_text section="module_center_module"} -->
 <admin_menu>
     <menugroup id="BOX_HEADING_CUSTOMERS">
-        <menuitem link="admin.php" link_param="do=Sms77"  title="{$txt.sms77_bulk_messaging}"/>
+        <menuitem link="admin.php" link_param="do=Seven"  title="{$txt.seven_bulk_messaging}"/>
     </menugroup>
 </admin_menu>

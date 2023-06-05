@@ -1,7 +1,7 @@
 {extends file='get_usermod:layouts/main/layout.html'}
 
 {block name='content'}
-{load_language_text section='sms77'}
+{load_language_text section='seven'}
 
 <h1>{$txt.BULK_MSG}</h1>
 
@@ -29,7 +29,7 @@
 <p>{$txt.API_KEY_MISSING}<a href='{$content.settingsLink}'>{$txt.CLICK_HERE}</a></p>
 {else}
 <form action='{$content.action}' class='form-horizontal' data-gx-widget='tooltip'
-      method='post' id='sms77_compose_bulk_msg'>
+      method='post' id='seven_compose_bulk_msg'>
     <div class='form-group'>
         <label class='col-md-6'>
             <input type='radio' name='msg_type' value='sms' checked/>{$txt.SMS}
@@ -73,7 +73,7 @@
                    maxlength='16'
                    name='from'
                    type='text'
-                   value='{gm_get_conf("SMS77_SMS_FROM")}'
+                   value='{gm_get_conf("SEVEN_SMS_FROM")}'
             />
         </div>
     </div>
@@ -206,7 +206,7 @@ Are you a guest: {{isGuest}}{/literal}</textarea>
 
     const textCharLimit = document.getElementById('text_char_limit')
     const text = document.getElementById('text')
-    const form = document.getElementById('sms77_compose_bulk_msg')
+    const form = document.getElementById('seven_compose_bulk_msg')
     const types = document.querySelectorAll('input[name="msg_type"]')
 
     Array.from(types).forEach(t => t.addEventListener('change', e => {

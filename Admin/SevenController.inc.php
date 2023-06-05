@@ -4,7 +4,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 MainFactory::load_class('AdminHttpViewController');
 
-class Sms77Controller extends AdminHttpViewController {
+class SevenController extends AdminHttpViewController {
     /** @var CI_DB_query_builder $db */
     private $db;
 
@@ -28,11 +28,11 @@ class Sms77Controller extends AdminHttpViewController {
             'GXCoreLoader', MainFactory::create('GXCoreLoaderSettings'));
         $this->db = $gxCoreLoader->getDatabaseQueryBuilder();
 
-        $this->languageTextManager = MainFactory::create('LanguageTextManager', 'sms77', $_SESSION['languages_id']);
+        $this->languageTextManager = MainFactory::create('LanguageTextManager', 'seven', $_SESSION['languages_id']);
     }
 
     private function getApiKey() {
-        return gm_get_conf('SMS77_API_KEY');
+        return gm_get_conf('SEVEN_API_KEY');
     }
 
     private function findCustomerCountryById($id) {
@@ -77,13 +77,13 @@ class Sms77Controller extends AdminHttpViewController {
             new NonEmptyStringType($this->languageTextManager->get_text('BULK_SMS_TITLE')),
             $this->getTemplateFile('bulk_sms.html'),
             MainFactory::create('KeyValueCollection', [
-                'action' => xtc_href_link('admin.php', 'do=Sms77/BulkSms'),
+                'action' => xtc_href_link('admin.php', 'do=Seven/BulkSms'),
                 'apiKey' => $this->getApiKey(),
                 'customerGroups' => $this->getCustomerGroups(),
                 'errors' => $this->errors,
                 'infos' => $this->infos,
                 'languageCode' => $this->getLanguageCode(),
-                'settingsLink' => xtc_href_link('admin.php', 'do=Sms77ModuleCenterModule'),
+                'settingsLink' => xtc_href_link('admin.php', 'do=SevenModuleCenterModule'),
             ]),
             $this->_getAssets(),
             MainFactory::create('ContentNavigationCollection', []));
@@ -94,14 +94,12 @@ class Sms77Controller extends AdminHttpViewController {
     protected function _getAssets() {
         /** @var AssetCollection $assets */
         $assets = MainFactory::create('AssetCollection');
-        $assets->add(MainFactory::create('Asset', 'meine.lang.inc.php'));
-        $assets->add(MainFactory::create('Asset', 'meine.css'));
-        $assets->add(MainFactory::create('Asset', 'meine.js'));
+
         return $assets;
     }
 
     public function actionBulkSms() {
-        require_once 'TextPhrases/' . $_SESSION['language'] . '/sms77.lang.inc.php';
+        require_once 'TextPhrases/' . $_SESSION['language'] . '/seven.lang.inc.php';
 
         $filters = [];
         if ('' !== $_POST['filter_customer_group'])

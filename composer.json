@@ -1,5 +1,5 @@
 {
-    "name": "sms77/gambio",
+    "name": "seven.io/gambio",
     "require": {
         "php": ">=5.6",
         "sms77/api": "dev-php5.6"

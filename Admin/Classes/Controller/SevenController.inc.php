@@ -4,7 +4,7 @@ require_once __DIR__ . '/../../../vendor/autoload.php';
 
 MainFactory::load_class('AdminHttpViewController');
 
-class Sms77Controller extends AdminHttpViewController {
+class SevenController extends AdminHttpViewController {
     /** @var CI_DB_query_builder $db */
     private $db;
 
@@ -29,7 +29,7 @@ class Sms77Controller extends AdminHttpViewController {
         $this->db = $gxCoreLoader->getDatabaseQueryBuilder();
 
         $this->languageTextManager = MainFactory::create(
-            'LanguageTextManager', 'sms77', $_SESSION['languages_id']);
+            'LanguageTextManager', 'seven', $_SESSION['languages_id']);
     }
 
     /**
@@ -116,7 +116,7 @@ class Sms77Controller extends AdminHttpViewController {
     }
 
     private function getApiKey() {
-        return gm_get_conf('SMS77_API_KEY');
+        return gm_get_conf('SEVEN_API_KEY');
     }
 
     public function actionDefault() {
@@ -124,13 +124,13 @@ class Sms77Controller extends AdminHttpViewController {
             new NonEmptyStringType($this->languageTextManager->get_text('BULK_MSG_TITLE')),
             $this->getTemplateFile('bulk_messaging.html'),
             MainFactory::create('KeyValueCollection', [
-                'action' => xtc_href_link('admin.php', 'do=Sms77/BulkSms'),
+                'action' => xtc_href_link('admin.php', 'do=Seven/BulkSms'),
                 'apiKey' => $this->getApiKey(),
                 'customerGroups' => $this->getCustomerGroups(),
                 'errors' => $this->errors,
                 'infos' => $this->infos,
                 'languageCode' => $this->getLanguageCode(),
-                'settingsLink' => xtc_href_link('admin.php', 'do=Sms77ModuleCenterModule'),
+                'settingsLink' => xtc_href_link('admin.php', 'do=SevenModuleCenterModule'),
             ]),
             MainFactory::create('AssetCollection'),
             MainFactory::create('ContentNavigationCollection', [])

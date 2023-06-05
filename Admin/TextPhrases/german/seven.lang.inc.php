@@ -4,7 +4,7 @@ $t_language_text_section_content_array = [
     'API_KEY_MISSING' => 'Ein API-Schlüssel ist notwendig für den Versand. Bitte navigieren Sie zu den Moduleinstellungen um diesen zu setzen: ',
 
     'BULK_MSG' => 'Massenversand',
-    'BULK_MSG_TITLE' => 'Massenversand via sms77',
+    'BULK_MSG_TITLE' => 'Massenversand via seven',
 
     'CLICK_HERE' => 'Hier klicken',
 

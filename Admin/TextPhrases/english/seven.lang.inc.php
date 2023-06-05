@@ -4,7 +4,7 @@ $t_language_text_section_content_array = [
     'API_KEY_MISSING' => 'An API key is required for sending. Please navigate to the module settings to set one: ',
 
     'BULK_MSG' => 'Bulk Messaging',
-    'BULK_MSG_TITLE' => 'Bulk messaging by sms77',
+    'BULK_MSG_TITLE' => 'Bulk messaging by seven',
 
     'CLICK_HERE' => 'Click here',
 
