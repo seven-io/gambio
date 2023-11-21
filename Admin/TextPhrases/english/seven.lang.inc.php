@@ -11,9 +11,6 @@ $t_language_text_section_content_array = [
     'CUSTOMER_GROUP' => 'Customer Group',
     'CUSTOMER_GROUP_ALL' => 'All Customer Groups',
 
-    'DEBUG' => 'Debug',
-    'DEBUG_DETAIL' => 'Does not send out messages if enabled',
-
     'DISCARD_MESSAGE' => 'Close message',
 
     'FILTERS' => 'Filters',

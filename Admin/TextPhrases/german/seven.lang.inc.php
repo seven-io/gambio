@@ -11,9 +11,6 @@ $t_language_text_section_content_array = [
     'CUSTOMER_GROUP' => 'Kundengruppe',
     'CUSTOMER_GROUP_ALL' => 'Alle Kundengruppen',
 
-    'DEBUG' => 'Debug',
-    'DEBUG_DETAIL' => 'Sendet keine Nachrichten, wenn aktiviert',
-
     'DISCARD_MESSAGE' => 'Nachricht verwerfen',
 
     'FILTERS' => 'Filter',

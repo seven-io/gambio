@@ -37,7 +37,6 @@ class SevenController extends AdminHttpViewController {
      */
     private function getMessageParams($type) {
         $params = [
-            'debug' => isset($_POST['debug']),
             'from' => '' === $_POST['from'] ? null : $_POST['from'],
             'json' => true,
         ];

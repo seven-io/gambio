@@ -111,7 +111,6 @@ class SevenController extends AdminHttpViewController {
         else {
             $client = (new Client($this->getApiKey(), 'gambio'));
             $params = [
-                'debug' => isset($_POST['debug']),
                 'flash' => isset($_POST['flash']),
                 'foreign_id' => '' === $_POST['foreign_id'] ? null : $_POST['foreign_id'],
                 'from' => '' === $_POST['from'] ? null : $_POST['from'],
