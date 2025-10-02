@@ -31,9 +31,6 @@ $t_language_text_section_content_array = [
 
     'NO_RECIPIENTS' => 'No recipients found.',
 
-    'NO_RELOAD' => 'No Reload',
-    'NO_RELOAD_DETAIL' => 'Prevent sending duplicate SMS (text and recipient alike) within 180 seconds',
-
     'PERFORMANCE_TRACKING' => 'Performance Tracking',
     'PERFORMANCE_TRACKING_DETAIL' => 'Enables Performance Tracking for URLs found in the message text',
 

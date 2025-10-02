@@ -45,7 +45,6 @@ class SevenController extends AdminHttpViewController {
             $params = array_merge($params, [
                 'flash' => isset($_POST['flash']),
                 'foreign_id' => '' === $_POST['foreign_id'] ? null : $_POST['foreign_id'],
-                'no_reload' => isset($_POST['no_reload']),
                 'label' => '' === $_POST['label'] ? null : $_POST['label'],
                 'performance_tracking' => isset($_POST['performance_tracking']),
             ]);

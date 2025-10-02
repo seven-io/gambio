@@ -114,7 +114,6 @@ class SevenController extends AdminHttpViewController {
                 'flash' => isset($_POST['flash']),
                 'foreign_id' => '' === $_POST['foreign_id'] ? null : $_POST['foreign_id'],
                 'from' => '' === $_POST['from'] ? null : $_POST['from'],
-                'no_reload' => isset($_POST['no_reload']),
                 'label' => '' === $_POST['label'] ? null : $_POST['label'],
                 'json' => true,
                 'performance_tracking' => isset($_POST['performance_tracking']),
